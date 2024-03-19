@@ -102,36 +102,6 @@ form.sign-in-form {
   font-weight: 500;
 }
 
-.social-text {
-  padding: 0.7rem 0;
-  font-size: 1rem;
-}
-
-.social-media {
-  display: flex;
-  justify-content: center;
-}
-
-.social-icon {
-  height: 46px;
-  width: 46px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 0.45rem;
-  color: #333;
-  border-radius: 50%;
-  border: 1px solid #333;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: 0.3s;
-}
-
-.social-icon:hover {
-  color: #4481eb;
-  border-color: #4481eb;
-}
-
 .btn {
   width: 150px;
   background-color: #5995fd;
@@ -431,52 +401,3 @@ form.sign-in-form {
   }
 }
 
-.method-selection {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.method-selection label {
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.method-selection input[type="radio"] {
-  display: none;
-}
-
-.method-selection input[type="radio"] + .checkmark {
-  display: inline-block;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background-color: #ccc;
-  position: relative;
-}
-
-.method-selection input[type="radio"]:checked + .checkmark {
-  background-color: #4CAF50;
-}
-
-.method-selection input[type="radio"] + .checkmark:after {
-  content: "";
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background-color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.2s ease-in-out;
-}
-
-.method-selection input[type="radio"]:checked + .checkmark:after {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.email-field,
-.phone-field {
-  display: phone-field;
-}
