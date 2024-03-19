@@ -3,98 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
   <title>Forgotten Password</title>
-  <style>
-    /* Your existing CSS styles */
-
-    /* Add the following CSS rules */
-    .method-selection {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .method-selection label {
-      margin-right: 10px;
-      cursor: pointer;
-    }
-
-    .method-selection input[type="radio"] {
-      display: none;
-    }
-
-    .method-selection input[type="radio"] + .checkmark {
-      display: inline-block;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background-color: #ccc;
-      position: relative;
-    }
-
-    .method-selection input[type="radio"]:checked + .checkmark {
-      background-color: #4CAF50;
-    }
-
-    .method-selection input[type="radio"] + .checkmark:after {
-      content: "";
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background-color: white;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      transition: transform 0.2s ease-in-out;
-    }
-
-    .method-selection input[type="radio"]:checked + .checkmark:after {
-      transform: translate(-50%, -50%) scale(1);
-    }
-
-    .input-field {
-      max-width: 380px;
-      width: 100%;
-      background-color: #f0f0f0;
-      margin: 10px 0;
-      height: 55px;
-      border-radius: 55px;
-      display: grid;
-      grid-template-columns: 15% 85%;
-      padding: 0 0.4rem;
-      position: relative;
-    }
-
-    .input-field i {
-      text-align: center;
-      line-height: 55px;
-      color: #acacac;
-      transition: 0.5s;
-      font-size: 1.1rem;
-    }
-
-    .input-field input {
-      background: none;
-      outline: none;
-      border: none;
-      line-height: 1;
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: #333;
-    }
-
-    .input-field input::placeholder {
-      color: #aaa;
-      font-weight: 500;
-    }
-
-    .email-field,
-    .phone-field {
-      display: none;
-    }
-  </style>
 </head>
 <body>
   <div class="container">
@@ -102,19 +12,6 @@
       <div class="signin-signup">
         <form action="#" class="reset-password-form">
           <h2 class="title">Reset Password</h2>
-          <div class="method-selection">
-            <p>Get link via:</p>
-            <label>
-              <input type="radio" name="method" value="whatsapp">
-              <span class="checkmark"></span>
-              WhatsApp
-            </label>
-            <label>
-              <input type="radio" name="method" value="email">
-              <span class="checkmark"></span>
-              Email
-            </label>
-          </div>
           <div class="input-field email-field">
             <i class="fas fa-envelope"></i>
             <input type="email" placeholder="Email" />
@@ -123,6 +20,21 @@
             <i class="fas fa-phone"></i>
             <input type="tel" placeholder="Phone Number" />
           </div>
+          <div class="method-selection">
+            <p>Get link via:</p>
+            <div class="options">
+              <label>
+                <input type="radio" name="method" value="whatsapp">
+                <span class="checkmark"></span>
+                WhatsApp
+              </label>
+              <label>
+                <input type="radio" name="method" value="email">
+                <span class="checkmark"></span>
+                Email
+              </label>
+            </div>
+          </div>
           <input type="submit" value="Send link" class="btn solid" />
         </form>
       </div>
@@ -130,13 +42,13 @@
     <div class="panels-container">
       <div class="panel left-panel">
         <div class="content">
-          <h3>New here ?</h3>
+          <h3>Confused ?</h3>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-            ex ratione. Aliquid!
+            If you want to head back 
+            click the button below
           </p>
-          <button class="btn transparent" id="sign-up-btn">
-            Sign up
+          <button class="btn transparent" id="back-btn">
+            Back
           </button>
         </div>
         <img src="img/log.svg" class="image" alt="" />
@@ -149,7 +61,7 @@
     const methodSelection = document.querySelectorAll('.method-selection input[type="radio"]');
     const emailField = document.querySelector('.email-field');
     const phoneField = document.querySelector('.phone-field');
-
+    const back_btn = document.querySelector("#back-btn");
     methodSelection.forEach(input => {
       input.addEventListener('change', () => {
         if (input.value === 'whatsapp') {
@@ -160,6 +72,9 @@
           phoneField.style.display = 'none';
         }
       });
+    });
+    back_btn.addEventListener("click", function() {
+      window.location.href = "index.html";
     });
   </script>
 </body>
