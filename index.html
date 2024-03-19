@@ -99,16 +99,17 @@
     const sign_in_btn = document.querySelector("#sign-in-btn");
     const sign_up_btn = document.querySelector("#sign-up-btn");
     const container = document.querySelector(".container");
-    const method = document.querySelector('input[name="method"]:checked').value;
-    const signupForm = document.getElementById("signup-form");
     sign_up_btn.addEventListener("click", () => {
       container.classList.add("sign-up-mode");
     });
     sign_in_btn.addEventListener("click", () => {
       container.classList.remove("sign-up-mode");
     });
+  </script>
+   <script>
+    const signupForm = document.getElementById("signup-form");
     signupForm.addEventListener("submit", function(event) {
-      event.preventDefault();
+      event.preventDefault(); 
       const method = document.querySelector('input[name="method"]:checked').value;
       if (method === "whatsapp") {
         signupForm.action = "/verify-whatsapp";
